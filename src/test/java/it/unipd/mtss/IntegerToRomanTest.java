@@ -34,13 +34,18 @@ public class IntegerToRomanTest {
         assertEquals("LXXX", IntegerToRoman.convert(80));
         assertEquals("XC", IntegerToRoman.convert(90));
         assertEquals("C", IntegerToRoman.convert(100));
+        // Test primi 500 numeri
+        assertEquals("CC", IntegerToRoman.convert(200));
+        assertEquals("CCC", IntegerToRoman.convert(300));
+        assertEquals("CD", IntegerToRoman.convert(400));
+        assertEquals("D", IntegerToRoman.convert(500));
     }
 
     // Test per numeri troppo grandi
     @Test
     public void testConvertiNumeroGrande() {
         Exception exception = assertThrows(IllegalArgumentException.class, () -> {
-            for (int n =101; n<=1000; n++){
+            for (int n =501; n<=1000; n++){
                 IntegerToRoman.convert(n);
             }
         });
