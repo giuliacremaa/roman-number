@@ -20,6 +20,10 @@ public class RomanPrinterTest {
         assertEquals(" __      __  _____   _____   _____ \n \\ \\    / / |_   _| |_   _| |_   _|\n  \\ \\  / /    | |     | |     | |  \n   \\ \\/ /     | |     | |     | |  \n    \\  /     _| |_   _| |_   _| |_ \n     \\/     |_____| |_____| |_____|\n", RomanPrinter.print(8));
         assertEquals("  _____  __   __\n |_   _| \\ \\ / /\n   | |    \\ V / \n   | |     > <  \n  _| |_   / . \\ \n |_____| /_/ \\_\\\n", RomanPrinter.print(9));
         assertEquals(" __   __\n \\ \\ / /\n  \\ V / \n   > <  \n  / . \\ \n /_/ \\_\\\n", RomanPrinter.print(10));
+        // Test primi 20 numeri
+        assertEquals(" __   __ __      __\n \\ \\ / / \\ \\    / /\n  \\ V /   \\ \\  / / \n   > <     \\ \\/ /  \n  / . \\     \\  /   \n /_/ \\_\\     \\/    \n", RomanPrinter.print(15));
+        assertEquals(" __   __  _____  __   __\n \\ \\ / / |_   _| \\ \\ / /\n  \\ V /    | |    \\ V / \n   > <     | |     > <  \n  / . \\   _| |_   / . \\ \n /_/ \\_\\ |_____| /_/ \\_\\\n", RomanPrinter.print(19));
+        assertEquals(" __   __ __   __\n \\ \\ / / \\ \\ / /\n  \\ V /   \\ V / \n   > <     > <  \n  / . \\   / . \\ \n /_/ \\_\\ /_/ \\_\\\n", RomanPrinter.print(20));
     }
 
     // Test per numeri troppo piccoli
@@ -32,7 +36,7 @@ public class RomanPrinterTest {
     // Test per numeri troppo grandi
     @Test
     public void testStampaNumeroAlto() {
-        Exception e = assertThrows(IllegalArgumentException.class, () -> RomanPrinter.print(11));
+        Exception e = assertThrows(IllegalArgumentException.class, () -> RomanPrinter.print(21));
         assertEquals("Non valido", e.getMessage());
     }
 }
