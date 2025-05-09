@@ -24,13 +24,17 @@ public class IntegerToRomanTest {
         assertEquals("XV", IntegerToRoman.convert(15));
         assertEquals("XIX", IntegerToRoman.convert(19));
         assertEquals("XX", IntegerToRoman.convert(20));
+        // Test primi 50 numeri
+        assertEquals("XXX", IntegerToRoman.convert(30));
+        assertEquals("XL", IntegerToRoman.convert(40));
+        assertEquals("L", IntegerToRoman.convert(50));
     }
 
     // Test per numeri troppo grandi
     @Test
     public void testConvertiNumeroGrande() {
         Exception exception = assertThrows(IllegalArgumentException.class, () -> {
-            for (int n = 21; n<=1000; n++){
+            for (int n = 51; n<=1000; n++){
                 IntegerToRoman.convert(n);
             }
         });
